@@ -1,6 +1,6 @@
 FROM python:alpine
 
-MAINTAINER Alexander Thurman, it.snake.co.inc@gmail.com
+MAINTAINER Alexander Thurman, it.snake.co.inc@gmail.com ptero
 
 #Install dependencies
 RUN sudo apk update \
