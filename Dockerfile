@@ -8,7 +8,6 @@ RUN         apk update \
 
 USER        container
 ENV         USER=container HOME=/home/container
-WORKDIR     /home/container
 
 #Install dependencies
 RUN sudo apt-get update \
@@ -30,8 +29,10 @@ RUN sudo apt-get install wget \
 #Install PIP dependencies
 RUN sudo pip install -r requirements.txt
 
+WORKDIR     /home/container
+
 #Add volume for configuration
-VOLUME /musicBot/config
+VOLUME /config
 
 COPY ./entrypoint.sh /entrypoint.sh
 CMD ["/bin/ash", "/entrypoint.sh"]
