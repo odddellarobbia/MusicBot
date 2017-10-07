@@ -1,4 +1,4 @@
-FROM python:alpine
+FROM ubuntu:14.04
 
 MAINTAINER Alexander Thurman, it.snake.co.inc@gmail.com ptero
 
