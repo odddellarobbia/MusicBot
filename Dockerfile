@@ -23,6 +23,9 @@ RUN sudo apt-get install wget \
     && wget https://bootstrap.pypa.io/get-pip.py \
     && sudo python3.5 get-pip.py
 
+#Install PIP dependencies
+RUN sudo pip install -r requirements.txt
+
 RUN         adduser -D -h /home/container container
 
 USER        container
@@ -33,9 +36,6 @@ WORKDIR /home/container
 
 COPY ./entrypoint.sh /entrypoint.sh
 CMD ["/bin/ash", "/entrypoint.sh"]
-
-#Install PIP dependencies
-RUN sudo pip install -r requirements.txt
 
 #Add volume for configuration
 VOLUME /home/container/config
