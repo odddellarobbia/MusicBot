@@ -39,8 +39,5 @@ WORKDIR /home/container
 COPY ./entrypoint.sh /entrypoint.sh
 CMD ["/bin/ash", "/entrypoint.sh"]
 
-#Add volume for configuration
-VOLUME /home/container/config
-
 CMD python3.5 run.py
 
