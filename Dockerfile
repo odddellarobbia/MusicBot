@@ -23,7 +23,7 @@ RUN sudo apt-get install wget \
     && wget https://bootstrap.pypa.io/get-pip.py \
     && sudo python3.5 get-pip.py
 
-RUN         && adduser -D -h /home/container container
+RUN         adduser -D -h /home/container container
 
 USER        container
 ENV         USER=container HOME=/home/container
