@@ -27,7 +27,7 @@ RUN mkdir -p /home/container
 
 WORKDIR /home/container
 
-COPY ./requirements.txt /requirements.txt
+COPY ./requirements.txt /home/container/requirements.txt
 
 #Install PIP dependencies
 RUN sudo pip install -r requirements.txt
@@ -38,7 +38,6 @@ USER        container
 ENV         USER=container HOME=/home/container
 
 #Add musicBot
-WORKDIR /home/container
 
 COPY ./entrypoint.sh /entrypoint.sh
 CMD ["/bin/ash", "/entrypoint.sh"]
