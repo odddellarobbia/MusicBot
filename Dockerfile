@@ -1,4 +1,4 @@
-FROM ubuntu:14.04
+FROM python:alpine
 
 MAINTAINER Alexander Thurman, it.snake.co.inc@gmail.com
 
