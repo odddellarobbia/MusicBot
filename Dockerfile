@@ -24,6 +24,9 @@ RUN sudo apt-get install wget \
     && sudo python3.5 get-pip.py
 
 COPY ./requirements.txt /requirements.txt
+RUN mkdir -p /home/container
+
+WORKDIR /home/container
 
 #Install PIP dependencies
 RUN sudo pip install -r requirements.txt
