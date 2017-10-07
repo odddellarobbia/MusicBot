@@ -13,7 +13,6 @@ RUN sudo apt-get update \
     && sudo apt-get install ffmpeg -y \
     && sudo apt-get install libopus-dev -y \
     && apt-get upgrade \
-    && apt-get install no-cache -y \
     && apt-get install curl -y \
     && apt-get install ca-certificates -y \ 
     && apt-get install openssl -y \    
