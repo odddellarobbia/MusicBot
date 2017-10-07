@@ -3,7 +3,7 @@ FROM python:alpine
 MAINTAINER Alexander Thurman, it.snake.co.inc@gmail.com
 
 #Install dependencies
-RUN sudo apt-get update \
+RUN sudo apk update \
     && sudo apk install software-properties-common -y \
     && sudo add-apt-repository ppa:fkrull/deadsnakes -y \
     && sudo add-apt-repository ppa:mc3man/trusty-media -y \
