@@ -19,9 +19,9 @@ RUN sudo apt-get install wget \
     && wget https://bootstrap.pypa.io/get-pip.py \
     && sudo python3.5 get-pip.py
 
-RUN         apk update \
-            && apk upgrade \
-            && apk add --no-cache curl ca-certificates openssl \
+RUN         apt-get update \
+            && apt-get upgrade \
+            && apt-get add --no-cache curl ca-certificates openssl \
             && adduser -D -h /home/container container
 
 USER        container
