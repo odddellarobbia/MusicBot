@@ -1,6 +1,14 @@
 FROM ubuntu:14.04
 
-MAINTAINER Sidesplitter, https://github.com/SexualRhinoceros/MusicBot
+MAINTAINER Alexander Thurman, it.snake.co.inc@gmail.com
+RUN         apk update \
+            && apk upgrade \
+            && apk add --no-cache curl ca-certificates openssl \
+            && adduser -D -h /home/container container
+
+USER        container
+ENV         USER=container HOME=/home/container
+WORKDIR     /home/container
 
 #Install dependencies
 RUN sudo apt-get update \
@@ -19,14 +27,13 @@ RUN sudo apt-get install wget \
     && wget https://bootstrap.pypa.io/get-pip.py \
     && sudo python3.5 get-pip.py
 
-#Add musicBot
-ADD . /musicBot
-WORKDIR /musicBot
-
 #Install PIP dependencies
 RUN sudo pip install -r requirements.txt
 
 #Add volume for configuration
 VOLUME /musicBot/config
+
+COPY ./entrypoint.sh /entrypoint.sh
+CMD ["/bin/ash", "/entrypoint.sh"]
 
 CMD python3.5 run.py
