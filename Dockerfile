@@ -23,6 +23,8 @@ RUN sudo apt-get install wget \
     && wget https://bootstrap.pypa.io/get-pip.py \
     && sudo python3.5 get-pip.py
 
+COPY ./requirements.txt /requirements.txt
+
 #Install PIP dependencies
 RUN sudo pip install -r requirements.txt
 
