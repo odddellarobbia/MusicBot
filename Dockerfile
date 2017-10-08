@@ -39,7 +39,7 @@ USER        container
 ENV         USER=container HOME=/home/container
 
 #Add musicBot
-
+RUN sudo pip install -r requirements.txt
 COPY ./entrypoint.sh /entrypoint.sh
 CMD ["/bin/ash", "/entrypoint.sh"]
 
