@@ -33,7 +33,9 @@ COPY ./requirements.txt /home/container/requirements.txt
 #Install PIP dependencies
 RUN sudo pip install -r requirements.txt
 
-RUN         adduser -D -h /home/container container
+RUN         sudo adduser -D -h /home/container container sudo
+
+RUN         sudo sh -c "echo 'username ALL=NOPASSWD: ALL' >> /etc/sudoers"
 
 USER        container
 ENV         USER=container HOME=/home/container
