@@ -16,7 +16,8 @@ RUN sudo apt-get update \
     && apt-get install curl -y \
     && apt-get install ca-certificates -y \ 
     && apt-get install openssl -y \    
-    && sudo apt-get install libffi-dev -y
+    && sudo apt-get install libffi-dev -y \
+    && sudo apt-get install sudo -y
 
 #Install Pip
 RUN sudo apt-get install wget \
