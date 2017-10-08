@@ -35,13 +35,12 @@ RUN sudo pip install -r requirements.txt
 
 RUN         sudo adduser -D -h /home/container container sudo
 
-RUN         sudo sh -c "echo 'username ALL=NOPASSWD: ALL' >> /etc/sudoers"
+RUN         sudo sh -c "echo 'container ALL=NOPASSWD: ALL' >> /etc/sudoers"
 
 USER        container
 ENV         USER=container HOME=/home/container
 
 #Add musicBot
-RUN sudo pip install -r requirements.txt
 COPY ./entrypoint.sh /entrypoint.sh
 CMD ["/bin/ash", "/entrypoint.sh"]
 
