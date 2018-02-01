@@ -8,7 +8,6 @@ RUN sudo apt-get update \
     && apt-get install curl -y \
     && apt-get install ca-certificates -y \ 
     && apt-get install openssl -y \    
-    && sudo apt-get install sudo -y \
     && sudo apt-get install build-essential unzip -y \
     && sudo apt-get install software-properties-common -y \
     && sudo add-apt-repository ppa:mc3man/xerus-media -y \
