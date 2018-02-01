@@ -3,8 +3,8 @@ FROM ubuntu:14.04
 MAINTAINER Alexander Thurman, it.snake.co.inc@gmail.com ptero
 
 #Install dependencies
-RUN sudo apt-get update \
-    && apt-get upgrade \
+RUN sudo apt-get update -y \
+    && apt-get upgrade -y \
     && apt-get install curl -y \
     && apt-get install ca-certificates -y \ 
     && apt-get install openssl -y \    
