@@ -4,10 +4,6 @@ MAINTAINER Alexander Thurman, it.snake.co.inc@gmail.com ptero
 
 #Install dependencies
 RUN sudo apt-get update \
-    && sudo apt-get install software-properties-common -y \
-    && sudo add-apt-repository ppa:fkrull/deadsnakes -y \
-    && sudo add-apt-repository ppa:mc3man/trusty-media -y \
-    && sudo apt-get update -y \
     && apt-get upgrade \
     && apt-get install curl -y \
     && apt-get install ca-certificates -y \ 
